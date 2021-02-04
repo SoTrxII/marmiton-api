@@ -1,0 +1,188 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>marmiton-api</title>
+	<meta name="description" content="Documentation for marmiton-api">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">marmiton-api</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>marmiton-api</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#marmiton-api" id="marmiton-api" style="color: inherit; text-decoration: none;">
+					<h1>Marmiton API</h1>
+				</a>
+				<p>A web-scraper made to get recipes from marmiton.org</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> </span><span style="color: #001080">marmiton</span><span style="color: #000000">-</span><span style="color: #001080">api</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">searchRecipes</span><span style="color: #000000">, </span><span style="color: #001080">QueryBuilder</span><span style="color: #000000">, </span><span style="color: #001080">RECIPE_PRICE</span><span style="color: #000000">, </span><span style="color: #001080">RECIPE_DIFFICULTY</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;marmiton-api&#039;</span>
+<span style="color: #008000">// A query builder is provided to make complex queries</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">query</span><span style="color: #000000"> = </span><span style="color: #001080">qb</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">withTitleContaining</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;soja&#039;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">withoutOven</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">withPrice</span><span style="color: #000000">(</span><span style="color: #0070C1">RECIPE_PRICE</span><span style="color: #000000">.</span><span style="color: #0070C1">CHEAP</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">takingLessThan</span><span style="color: #000000">(</span><span style="color: #098658">45</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">withDifficulty</span><span style="color: #000000">(</span><span style="color: #0070C1">RECIPE_DIFFICULTY</span><span style="color: #000000">.</span><span style="color: #0070C1">EASY</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">build</span><span style="color: #000000">()</span>
+<span style="color: #008000">// Fetch the recipes</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">recipes</span><span style="color: #000000">: </span><span style="color: #267F99">Recipe</span><span style="color: #000000">[] = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">searchRecipes</span><span style="color: #000000">(</span><span style="color: #001080">query</span><span style="color: #000000">)</span>
+</code></pre>
+				<p>By default, a maximum of 12 recipes will be returned, as it&#39;s the number of items per page in the website.
+				This number can be increased with the <code>limit</code> option, parsing multiple pages.</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">recipes</span><span style="color: #000000">: </span><span style="color: #267F99">Recipe</span><span style="color: #000000">[] = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">searchRecipes</span><span style="color: #000000">(</span><span style="color: #001080">query</span><span style="color: #000000">, { </span><span style="color: #001080">limit:</span><span style="color: #000000"> </span><span style="color: #098658">48</span><span style="color: #000000"> })</span>
+</code></pre>
+				<p>Sample result :</p>
+				<pre><code class="language-json"><span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;author&quot;</span><span style="color: #000000">: </span><span style="color: #A31515">&quot;lina_16542241&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;ingredients&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;1 pot de yaourt soja nature&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;1/2 pot d&#039;huile&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;2 pots de sucre&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;2 pots de farine&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;1 pot de maïzena&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;1 oeuf&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;1/2 sachet de levure&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Pomme&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Chocolat&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Noix de coco rapée&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Cannelle&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Chocolat fondu, etc...&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;tags&quot;</span><span style="color: #000000">: [</span><span style="color: #A31515">&quot;Dessert&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;Végétarien&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;Petits gâteaux&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;Gâteau&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;Muffin&quot;</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;steps&quot;</span><span style="color: #000000">: [</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Préchauffer le four à 180°C (thermostat 6).&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Dans un saladier, vider le pot de yaourt. Celui-ci servira de mesure.&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Ajouter l&#039;huile. Mélanger.&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Ajouter le sucre. Mélanger.&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Ajouter la farine, puis la maïzena et la levure (tamisées si possible), tout en mélangeant.&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Ajouter l&#039;oeuf. Bien mélanger.&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Ajouter à votre guise chocolat ou autre douceur pour obtenir des muffins encore meilleurs. Ils sont aussi très bons natures.&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;Cuire pendant 15-20 min à 180°C dans des moules adaptés.&quot;</span>
+<span style="color: #000000">  ],</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;people&quot;</span><span style="color: #000000">: </span><span style="color: #098658">12</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;budget&quot;</span><span style="color: #000000">: </span><span style="color: #098658">1</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;difficulty&quot;</span><span style="color: #000000">: </span><span style="color: #098658">2</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;prepTime&quot;</span><span style="color: #000000">: </span><span style="color: #098658">20</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0451A5">&quot;totalTime&quot;</span><span style="color: #000000">: </span><span style="color: #098658">35</span>
+<span style="color: #000000">}</span>
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/recipe_difficulty.html" class="tsd-kind-icon">RECIPE_<wbr>DIFFICULTY</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/recipe_price.html" class="tsd-kind-icon">RECIPE_<wbr>PRICE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/recipe_type.html" class="tsd-kind-icon">RECIPE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/marmitonerror.html" class="tsd-kind-icon">Marmiton<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/marmitonquerybuilder.html" class="tsd-kind-icon">Marmiton<wbr>Query<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/marmitonqueryoptions.html" class="tsd-kind-icon">Marmiton<wbr>Query<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/recipe.html" class="tsd-kind-icon">Recipe</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#searchrecipes" class="tsd-kind-icon">search<wbr>Recipes</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
