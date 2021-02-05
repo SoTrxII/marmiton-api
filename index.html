@@ -62,8 +62,7 @@
 					<h1>Marmiton API</h1>
 				</a>
 				<p><a href="https://codecov.io/gh/SoTrxII/marmiton-api"><img src="https://codecov.io/gh/SoTrxII/marmiton-api/branch/master/graph/badge.svg?token=8NANICXWL7" alt="codecov"></a></p>
-				<p>A web-scraper made to get recipes from marmiton.org
-				The documentation is hosted <a href="https://sotrxii.github.io/marmiton-api/">here</a></p>
+				<p>A web-scraper made to get recipes from marmiton.org. <a href="https://sotrxii.github.io/marmiton-api/">Documentation</a></p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -84,8 +83,8 @@
 <span style="color: #008000">// Fetch the recipes</span>
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">recipes</span><span style="color: #000000">: </span><span style="color: #267F99">Recipe</span><span style="color: #000000">[] = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">searchRecipes</span><span style="color: #000000">(</span><span style="color: #001080">query</span><span style="color: #000000">)</span>
 </code></pre>
-				<p>By default, a maximum of 12 recipes will be returned, as it&#39;s the number of items per page in the website.
-				This number can be increased with the <code>limit</code> option, parsing multiple pages.</p>
+				<p>By default, 12 recipes will be returned, as it&#39;s the number of items per page in the website.
+				This number can be changed with the <code>limit</code> option.</p>
 				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">recipes</span><span style="color: #000000">: </span><span style="color: #267F99">Recipe</span><span style="color: #000000">[] = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">searchRecipes</span><span style="color: #000000">(</span><span style="color: #001080">query</span><span style="color: #000000">, { </span><span style="color: #001080">limit:</span><span style="color: #000000"> </span><span style="color: #098658">48</span><span style="color: #000000"> })</span>
 </code></pre>
 				<p>Sample result :</p>
