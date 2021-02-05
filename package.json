@@ -1,0 +1,97 @@
+{
+  "name": "marmiton-api",
+  "version": "1.1.1",
+  "description": "",
+  "keywords": [],
+  "main": "dist/lib/marmiton-api.js",
+  "module": "dist/marmiton-api.es6.js",
+  "browser": "dist/marmiton-api.browser.js",
+  "typings": "dist/types/marmiton-api.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "sotrxii",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && npx typedoc src/marmiton-api.ts && cp -r src/@types dist/types/",
+    "start": "rollup -c rollup.config.ts -w",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run lint && npm run test -- --no-cache"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*/*.{js,ts}"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@start-dev/rollup-plugin-native-fetch": "^1.0.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.10",
+    "@types/node-fetch": "^2.5.8",
+    "jest": "^26.6.3",
+    "jest-config": "^26.6.3",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.33.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-visualizer": "^4.2.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^9.0.0",
+    "typedoc": "^0.20.20",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "node-html-parser": "^2.1.0",
+    "undici": "^3.3.0"
+  }
+}

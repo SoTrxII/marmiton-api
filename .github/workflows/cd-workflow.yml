@@ -1,0 +1,38 @@
+name: Docker CD
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Build-on-Linux:
+    runs-on: ubuntu-latest
+    name: Build on Linux
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15
+      - name: Install deps
+        run: npm install
+      - name: Package app
+        run: npm run build
+      - name: Coverage
+        env:
+          TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run : |
+          yarn test --coverage
+          bash <(curl -s https://codecov.io/bash) -t ${TOKEN}
+      - name: Publish docs to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: docs # The folder the action should deploy.
+          CLEAN: true
+      - name: Publish if version has been updated
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
