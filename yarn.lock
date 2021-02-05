@@ -488,11 +488,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@start-dev/rollup-plugin-native-fetch@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@start-dev/rollup-plugin-native-fetch/-/rollup-plugin-native-fetch-1.0.0.tgz#36c508b98e2f71185eacbceb25ed58bfeecbcde4"
-  integrity sha512-ROFbgC/Ab2gUINrn6a0yVm1n+Xz0W0UEyTt5lDSUKLTzahgJsFxA3m0zh8q3P53vyUU9Uj9aLRdxH9M7cT0+Vw==
-
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.12"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.12.tgz#4d8e9e51eb265552a7e4f1ff2219ab6133bdfb2d"
@@ -3244,13 +3239,6 @@ rollup-plugin-commonjs@^10.1.0:
     resolve "^1.11.0"
     rollup-pluginutils "^2.8.1"
 
-rollup-plugin-json@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-json/-/rollup-plugin-json-4.0.0.tgz#a18da0a4b30bf5ca1ee76ddb1422afbb84ae2b9e"
-  integrity sha512-hgb8N7Cgfw5SZAkb3jf0QXii6QX/FOkiIq2M7BAQIEydjHvTyxXHQiIzZaTFgx1GK0cRCHOCBHIyEkkLdWKxow==
-  dependencies:
-    rollup-pluginutils "^2.5.0"
-
 rollup-plugin-node-resolve@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.2.0.tgz#730f93d10ed202473b1fb54a5997a7db8c6d8523"
@@ -3301,7 +3289,7 @@ rollup-plugin-visualizer@^4.2.0:
     source-map "^0.7.3"
     yargs "^16.0.3"
 
-rollup-pluginutils@^2.5.0, rollup-pluginutils@^2.8.1:
+rollup-pluginutils@^2.8.1:
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz#72f2af0748b592364dbd3389e600e5a9444a351e"
   integrity sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
@@ -3974,11 +3962,6 @@ uglify-js@^3.1.4:
   version "3.12.6"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.12.6.tgz#f884584fcc42e10bca70db5cb32e8625c2c42535"
   integrity sha512-aqWHe3DfQmZUDGWBbabZ2eQnJlQd1fKlMUu7gV+MiTuDzdgDw31bI3wA2jLLsV/hNcDP26IfyEgSVoft5+0SVw==
-
-undici@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-3.3.0.tgz#12c5eeb895212612f98a7a31f0911c4258002a39"
-  integrity sha512-tZtXXLrX8i/tVmlx6BURTmCBGriz8CC3eQnPaysvOrMItWXBaWto53ulJj1wwyR90013Bqa1hI/gSqtvsUfu8A==
 
 union-value@^1.0.0:
   version "1.0.1"

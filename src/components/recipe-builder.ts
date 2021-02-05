@@ -49,7 +49,7 @@ export class RecipeBuilder {
   }
 
   withPeople(nb: number): this {
-    this.infos['people'] = nb
+    this.infos['people'] = isNaN(nb) ? undefined : nb
     return this
   }
 

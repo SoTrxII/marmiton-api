@@ -36,6 +36,14 @@ describe('API', () => {
     const rb = new MarmitonQueryBuilder();
     const qs = rb.vegan().build();
     const recipes: Recipe[] = await searchRecipes(qs);
+    recipes.map((r) => {
+      console.log(r)
+      for (const [key, value] of Object.entries(r)) {
+        console.log(`${key} --> ${value}`)
+        expect(value).not.toBeNaN()
+        expect(value).not.toBeNull()
+      }
+    })
     console.log(recipes);
-  })
+  }, 10000)
 })

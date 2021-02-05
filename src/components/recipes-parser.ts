@@ -100,7 +100,13 @@ export class RecipesParser {
   private static getCleanText(e: HTMLElement) {
     return e?.text
       ?.trim()
+      // Remove all tabs, and linebreaks
       .replace(/[\n\r\t]/g, '')
+      // Allow only a single space between words
       .replace(/\s+/, ' ')
+      // If there is no space between the first digit and a word (ingredients)
+      // add it
+      .replace(/(\d)([A-Za-z]{2,})/, '$1 $2')
+
   }
 }
