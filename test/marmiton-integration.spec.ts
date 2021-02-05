@@ -1,4 +1,4 @@
-import { Recipe, searchRecipes } from '../src/marmiton-api'
+import { Recipe, searchRecipes, MarmitonQueryBuilder } from '../src/marmiton-api'
 
 /**
  * Dummy test
@@ -31,4 +31,11 @@ describe('API', () => {
     const end = process.hrtime(start);
     console.log(end)
   }, 13000)
+
+  it("Simple builder request", async () => {
+    const rb = new MarmitonQueryBuilder();
+    const qs = rb.vegan().build();
+    const recipes: Recipe[] = await searchRecipes(qs);
+    console.log(recipes);
+  })
 })
