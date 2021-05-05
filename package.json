@@ -11,10 +11,7 @@
     "dist"
   ],
   "author": "sotrxii",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
+  "repository": "https://github.com/SoTrxII/marmiton-api.git",
   "license": "MIT",
   "engines": {
     "node": ">=6.0.0"
