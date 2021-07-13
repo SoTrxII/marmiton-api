@@ -62,14 +62,15 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^26.0.24",
+    "@rollup/plugin-json": "^4.1.0",
+    "@types/jest": "^26.0.15",
     "@types/node": "^16.3.1",
-    "@types/node-fetch": "^2.5.11",
+    "@types/node-fetch": "^2.5.8",
     "jest": "^27.0.6",
     "jest-config": "^27.0.6",
-    "prettier": "^2.3.2",
+    "prettier": "^2.2.0",
     "rimraf": "^3.0.2",
-    "rollup": "^2.53.1",
+    "rollup": "^2.33.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.6.3",
@@ -82,10 +83,10 @@
     "tslint-config-prettier": "^1.15.0",
     "tslint-config-standard": "^9.0.0",
     "typedoc": "^0.21.4",
-    "typescript": "^4.3.5"
+    "typescript": "^4.1.2"
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
-    "node-html-parser": "^4.1.0"
+    "node-html-parser": "^3.3.6"
   }
 }
