@@ -45,5 +45,5 @@ describe('API', () => {
       }
     })
     console.log(recipes);
-  }, 10000)
+  }, 20000)
 })

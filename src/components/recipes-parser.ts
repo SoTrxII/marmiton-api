@@ -43,8 +43,6 @@ export class RecipesParser {
       // Not really needed but just to be sure
       .find((r) => r['@type'] === 'Recipe')
 
-    if (recipe === undefined) return undefined
-
     // Gather every raw attributes we can
     rb.withIngredients(recipe?.recipeIngredient)
       .withAuthor(recipe?.author)
@@ -71,7 +69,7 @@ export class RecipesParser {
     // "Optional" attributes
     // Pure regex parsing isn't that consistent, better prepare for the worst
     const people = Number(recipe.recipeYield.match(/\d+/)[0])
-    if (!isNaN(people)) rb.withPeople(people)
+    rb.withPeople(people)
 
     return rb.build()
   }

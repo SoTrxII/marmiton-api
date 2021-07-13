@@ -5,6 +5,7 @@ describe('Recipe Parser', () => {
   it('Using a sample recipe', async () => {
     // The sample is store in a gist, to prevent the failure due to teh recipe being pulled
     // from the live website
+
     const sample = await (
       await fetch(
         'https://gist.githubusercontent.com/SoTrxII/299c3ee1750fc74526e4d8e0b4936944/raw/f26821214efd3aec90e0f4ca9d2841f6e348565b/sample_recipe.html'
@@ -62,5 +63,17 @@ describe('Recipe Parser', () => {
       prepTime: 15,
       totalTime: 35,
     })
+  })
+
+  it('With a high difficulty', async () => {
+    const sample = await (
+      await fetch(
+        'https://www.marmiton.org/recettes/recette_poulet-fermier-pommes-de-terres-fleurs-de-courgettes_530770.aspx'
+      )
+    ).text()
+    const r = await RecipesParser.parseRecipe(sample)
+
+    expect(r!.difficulty).toBe(4)
+    expect(r!.budget).toBe(3)
   })
 })
