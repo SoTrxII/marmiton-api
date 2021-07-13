@@ -1,8 +1,3 @@
-/**
- * How much money would be spent by buying all the
- * stuff required to make the recipe.
- * There doesn't seems to be a direct money equivalent.
- */
 import { RECIPE_DIFFICULTY, RECIPE_PRICE, RECIPE_TYPE } from './recipe-enums'
 
 export class MarmitonQueryBuilder {

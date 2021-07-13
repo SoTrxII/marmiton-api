@@ -1,3 +1,8 @@
+/**
+ * How much money would be spent by buying all the
+ * stuff required to make the recipe.
+ * There doesn't seems to be a direct money equivalent.
+ */
 export enum RECIPE_PRICE {
   /**
    * Let's roll out the pasta

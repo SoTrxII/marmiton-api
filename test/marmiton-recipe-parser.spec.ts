@@ -7,27 +7,45 @@ describe('Recipe Parser', () => {
     // from the live website
     const sample = await (
       await fetch(
-        'https://gist.githubusercontent.com/SoTrxII/299c3ee1750fc74526e4d8e0b4936944/raw/50cb2306649e9d4af23957655b2e46ee044b55f0/sample_recipe.html'
+        'https://gist.githubusercontent.com/SoTrxII/299c3ee1750fc74526e4d8e0b4936944/raw/f26821214efd3aec90e0f4ca9d2841f6e348565b/sample_recipe.html'
       )
     ).text()
     const r = await RecipesParser.parseRecipe(sample)
+    console.log(r)
     expect(r).toMatchObject({
       author: 'lina_16542241',
       ingredients: [
-        '1 pot de yaourt soja nature',
-        "1/2 pot d'huile",
+        '1 pots de yaourt soja nature',
+        "1/2 pots d'huile",
         '2 pots de sucre',
         '2 pots de farine',
-        '1 pot de maïzena',
-        '1 oeuf',
-        '1/2 sachet de levure',
-        'Pomme',
-        'Chocolat',
-        'Noix de coco rapée',
-        'Cannelle',
-        'Chocolat fondu, etc...',
+        '1 pots de maïzena',
+        '1 oeufs',
+        '1/2 sachets de levure',
+        'pomme',
+        'chocolat',
+        'noix de coco rapée',
+        'cannelle',
+        'nappage chocolat',
       ],
-      tags: ['Dessert', 'Végétarien', 'Petits gâteaux', 'Gâteau', 'Muffin'],
+      tags: [
+        'Muffins au yaourt de soja',
+        'muffin',
+        'yaourt',
+        'huile',
+        'sucre',
+        'farine',
+        'maïzena',
+        'oeuf',
+        'levure',
+        'pomme',
+        'chocolat',
+        'noix de coco rapée',
+        'cannelle',
+        'nappage chocolat',
+        'facile',
+        'bon marché',
+      ],
       steps: [
         'Préchauffer le four à 180°C (thermostat 6).',
         'Dans un saladier, vider le pot de yaourt. Celui-ci servira de mesure.',
@@ -41,7 +59,7 @@ describe('Recipe Parser', () => {
       people: 12,
       budget: 1,
       difficulty: 2,
-      prepTime: 20,
+      prepTime: 15,
       totalTime: 35,
     })
   })
