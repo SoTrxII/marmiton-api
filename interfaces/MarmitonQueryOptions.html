@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RECIPE_PRICE | marmiton-api</title>
+	<title>MarmitonQueryOptions | marmiton-api</title>
 	<meta name="description" content="Documentation for marmiton-api">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,84 +55,51 @@
 					<a href="../modules.html">marmiton-api</a>
 				</li>
 				<li>
-					<a href="recipe_price.html">RECIPE_PRICE</a>
+					<a href="MarmitonQueryOptions.html">MarmitonQueryOptions</a>
 				</li>
 			</ul>
-			<h1>Enumeration RECIPE_PRICE</h1>
+			<h1>Interface MarmitonQueryOptions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>How much money would be spent by buying all the
-							stuff required to make the recipe.
-						There doesn&#39;t seems to be a direct money equivalent.</p>
-					</div>
-				</div>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">MarmitonQueryOptions</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="recipe_price.html#cheap" class="tsd-kind-icon">CHEAP</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="recipe_price.html#expensive" class="tsd-kind-icon">EXPENSIVE</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="recipe_price.html#medium" class="tsd-kind-icon">MEDIUM</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="MarmitonQueryOptions.html#limit" class="tsd-kind-icon">limit</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="cheap" class="tsd-anchor"></a>
-					<h3>CHEAP</h3>
-					<div class="tsd-signature tsd-kind-icon">CHEAP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 1</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="limit" class="tsd-anchor"></a>
+					<h3>limit</h3>
+					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SoTrxII/marmiton-api/blob/9314f87/src/components/recipe-enums.ts#L10">src/components/recipe-enums.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/SoTrxII/marmiton-api/blob/0b82932/src/@types/marmiton-query-options.d.ts#L5">src/@types/marmiton-query-options.d.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Let&#39;s roll out the pasta</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="expensive" class="tsd-anchor"></a>
-					<h3>EXPENSIVE</h3>
-					<div class="tsd-signature tsd-kind-icon">EXPENSIVE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 3</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SoTrxII/marmiton-api/blob/9314f87/src/components/recipe-enums.ts#L18">src/components/recipe-enums.ts:18</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Lobsters and such ?</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="medium" class="tsd-anchor"></a>
-					<h3>MEDIUM</h3>
-					<div class="tsd-signature tsd-kind-icon">MEDIUM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SoTrxII/marmiton-api/blob/9314f87/src/components/recipe-enums.ts#L14">src/components/recipe-enums.ts:14</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Your average meal.</p>
+							<p>Maximum number of recipes to return</p>
 						</div>
 					</div>
 				</section>
@@ -149,43 +116,37 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="recipe_difficulty.html" class="tsd-kind-icon">RECIPE_<wbr>DIFFICULTY</a>
+						<a href="../enums/RECIPE_DIFFICULTY.html" class="tsd-kind-icon">RECIPE_<wbr>DIFFICULTY</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/RECIPE_PRICE.html" class="tsd-kind-icon">RECIPE_<wbr>PRICE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/RECIPE_TYPE.html" class="tsd-kind-icon">RECIPE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/MarmitonError.html" class="tsd-kind-icon">Marmiton<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/MarmitonQueryBuilder.html" class="tsd-kind-icon">Marmiton<wbr>Query<wbr>Builder</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum">
-						<a href="recipe_price.html" class="tsd-kind-icon">RECIPE_<wbr>PRICE</a>
+					<li class="current tsd-kind-interface">
+						<a href="MarmitonQueryOptions.html" class="tsd-kind-icon">Marmiton<wbr>Query<wbr>Options</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="recipe_price.html#cheap" class="tsd-kind-icon">CHEAP</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="recipe_price.html#expensive" class="tsd-kind-icon">EXPENSIVE</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="recipe_price.html#medium" class="tsd-kind-icon">MEDIUM</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="MarmitonQueryOptions.html#limit" class="tsd-kind-icon">limit</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-enum">
-						<a href="recipe_type.html" class="tsd-kind-icon">RECIPE_<wbr>TYPE</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/marmitonerror.html" class="tsd-kind-icon">Marmiton<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/marmitonquerybuilder.html" class="tsd-kind-icon">Marmiton<wbr>Query<wbr>Builder</a>
-					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/marmitonqueryoptions.html" class="tsd-kind-icon">Marmiton<wbr>Query<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/recipe.html" class="tsd-kind-icon">Recipe</a>
+						<a href="Recipe.html" class="tsd-kind-icon">Recipe</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../modules.html#searchrecipes" class="tsd-kind-icon">search<wbr>Recipes</a>
+						<a href="../modules.html#searchRecipes" class="tsd-kind-icon">search<wbr>Recipes</a>
 					</li>
 				</ul>
 			</nav>
@@ -202,6 +163,9 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
