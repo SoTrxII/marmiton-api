@@ -6,24 +6,31 @@ import { RECIPE_DIFFICULTY, RECIPE_PRICE } from './recipe-enums'
 
 export class RecipesParser {
   /** ISO 8601 Regex. The only capture groups used for a recipe should be H and M */
-  private static readonly ISO_8601_REGEX = /^P(?!$)(\d+(?:\.\d+)?Y)?(\d+(?:\.\d+)?M)?(\d+(?:\.\d+)?W)?(\d+(?:\.\d+)?D)?(T(?=\d)(\d+(?:\.\d+)?H)?(\d+(?:\.\d+)?M)?(\d+(?:\.\d+)?S)?)?$/
+  private static readonly ISO_8601_REGEX =
+    /^P(?!$)(\d+(?:\.\d+)?Y)?(\d+(?:\.\d+)?M)?(\d+(?:\.\d+)?W)?(\d+(?:\.\d+)?D)?(T(?=\d)(\d+(?:\.\d+)?H)?(\d+(?:\.\d+)?M)?(\d+(?:\.\d+)?S)?)?$/
 
   static async parseSearchResults(dom: string, baseUrl: string): Promise<Partial<Recipe>[]> {
     const recipes = await Promise.all(
       parse(dom)
-        .querySelectorAll('a.SearchResultsstyle__SearchCardResult-sc-1gofnyi-2')
+        .querySelectorAll('main div > a')
+        .filter((e: HTMLElement) => e.getAttribute('class')?.includes('MRTN'))
         .map(async (e) => {
           const url = new URL(e.getAttribute('href')!.trim(), baseUrl)
           // Get as many info as we can from the recipe search result
           // These cannot be undefined.
           const rb = new RecipeBuilder()
-            .withName(this.selectText(e, 'h4.RecipeCardResultstyle__Title-sc-30rwkm-0.eWjdzf'))
+            .withName(this.selectText(e, 'h4'))
             // .withDescription(this.selectText(e, '.recipe-card__description'))
             .withRate(Number(this.selectText(e, 'span')?.replace(/\/\s*5/, '')))
             .withUrl(url.toString())
           // Load the recipe page
           const dom = await (await fetch(url.toString())).text()
-          return this.parseRecipe(dom, rb)
+          try {
+            return await this.parseRecipe(dom, rb)
+          } catch {
+            // Some recipe are ads ?
+            return undefined
+          }
         })
     )
 
@@ -42,6 +49,8 @@ export class RecipesParser {
       .map((el) => JSON.parse(this.getCleanText(el.childNodes[0] as HTMLElement)))
       // Not really needed but just to be sure
       .find((r) => r['@type'] === 'Recipe')
+
+    if (recipe === undefined) return
 
     // Gather every raw attributes we can
     rb.withIngredients(recipe?.recipeIngredient)

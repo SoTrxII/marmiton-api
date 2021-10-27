@@ -4,6 +4,9 @@
 
 A web-scraper made to get recipes from marmiton.org. [Documentation](https://sotrxii.github.io/marmiton-api/)
 
+**NOTE : This scrapper is meant to be used on the server-side. Using the scrapper on the 
+client-side will lead to CORS issues.**
+
 ## Installation
 
 ```
@@ -13,7 +16,8 @@ npm install marmiton-api
 ## Usage
 
 ```ts
-import { searchRecipes, QueryBuilder, RECIPE_PRICE, RECIPE_DIFFICULTY } from 'marmiton-api'
+import { searchRecipes, QueryBuilder, MarmitonQueryBuilder, RECIPE_PRICE, RECIPE_DIFFICULTY, Recipe } from 'marmiton-api'
+const qb = new MarmitonQueryBuilder();
 // A query builder is provided to make complex queries
 const query = qb
   .withTitleContaining('soja')

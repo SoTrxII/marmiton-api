@@ -11,9 +11,8 @@ const BASE_URL = 'https://www.marmiton.org'
 const ENDPOINTS = {
   query: () => `${BASE_URL}/recettes/recherche.aspx`,
 }
-// Number of recipes per page
-const RECIPES_PER_PAGE = 15
-const PAGE_COUNTER = 12
+// Number of recipes per page (this isn't constant)
+const RECIPES_PER_PAGE = 13
 const DEFAULT_OPTIONS = {
   limit: RECIPES_PER_PAGE,
 }
@@ -28,19 +27,16 @@ export async function searchRecipes(
   opt?: Partial<MarmitonQueryOptions>
 ): Promise<Recipe[]> {
   const options = Object.assign(DEFAULT_OPTIONS, opt)
-  // With 12 Result per page, we need to run the query multiple times
-  // in order to get more results than that
-  const roundTrips = Math.ceil(options.limit / RECIPES_PER_PAGE)
-  const roundTripsRange = Array.from(Array(roundTrips).keys())
   const recipes: Partial<Recipe>[] = []
-  await Promise.all(
-    roundTripsRange.map(async (i) => {
-      let url = `${ENDPOINTS.query()}?${qs}`
-      if (i > 0) url += `&start=${i * PAGE_COUNTER}`
-      const htmlBody = await (await fetch(url)).text()
-      recipes.push(...(await RecipesParser.parseSearchResults(htmlBody, BASE_URL)))
-    })
-  )
+
+  for (let i = 1; recipes.length < options.limit; i++) {
+    let url = `${ENDPOINTS.query()}?${qs}`
+    url += `&page=${i + 1}`
+    const request = await fetch(url)
+    if (request.status !== 200) break
+    const htmlBody = await request.text()
+    recipes.push(...(await RecipesParser.parseSearchResults(htmlBody, BASE_URL)))
+  }
   return recipes.slice(0, options.limit) as Recipe[]
 }
 

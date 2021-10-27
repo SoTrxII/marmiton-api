@@ -14,6 +14,7 @@ export default {
   input: `src/${libraryName}.ts`,
   output: [
     { file: pkg.module, format: 'es', sourcemap: false },
+    { file: pkg.module, format: 'cjs', sourcemap: false },
     // Browser config won't work, XSS
     // { file: pkg.browser, format: 'iife', sourcemap: false, name: "marmiton" },
   ],

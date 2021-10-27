@@ -12,8 +12,10 @@ describe('API', () => {
         console.log(`${key} --> ${value}`)
         expect(value).not.toBeNaN()
         expect(value).not.toBeNull()
+        expect(value).not.toBeUndefined()
       }
     })
+
   })
 
   it('Should be able to get more than one page', async () => {
