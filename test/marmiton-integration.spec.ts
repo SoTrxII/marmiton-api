@@ -16,7 +16,7 @@ describe('API', () => {
       }
     })
 
-  })
+  }, 20000)
 
   it('Should be able to get more than one page', async () => {
     const start = process.hrtime();
