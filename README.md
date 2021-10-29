@@ -16,7 +16,7 @@ npm install marmiton-api
 ## Usage
 
 ```ts
-import { searchRecipes, QueryBuilder, MarmitonQueryBuilder, RECIPE_PRICE, RECIPE_DIFFICULTY, Recipe } from 'marmiton-api'
+import { searchRecipes, MarmitonQueryBuilder, RECIPE_PRICE, RECIPE_DIFFICULTY, Recipe } from 'marmiton-api'
 const qb = new MarmitonQueryBuilder();
 // A query builder is provided to make complex queries
 const query = qb
