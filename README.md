@@ -1,6 +1,8 @@
 # Marmiton API
 
 [![codecov](https://codecov.io/gh/SoTrxII/marmiton-api/branch/master/graph/badge.svg?token=8NANICXWL7)](https://codecov.io/gh/SoTrxII/marmiton-api)
+![codecov](https://badgen.net/npm/v/marmiton-api)
+![size](https://badgen.net/packagephobia/install/marmiton-api)
 
 A web-scraper made to get recipes from marmiton.org. [Documentation](https://sotrxii.github.io/marmiton-api/)
 
