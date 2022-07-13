@@ -136,7 +136,7 @@ export class RecipesParser {
   }
 
   private static selectText(root: HTMLElement, selector: string) {
-    return this.getCleanText(root.querySelector(selector))
+    return this.getCleanText(root.querySelector(selector) as HTMLElement)
   }
 
   private static getCleanText(e: HTMLElement) {
