@@ -17,9 +17,9 @@ export interface Recipe {
   rate: number
 
   /**
-   * Image provided with the recipe. Often the final product.
+   * Images provided with the recipe. Often the final product.
    */
-  image: string
+  images: string[]
 
   /**
    * Tags associated with the recipe

@@ -73,6 +73,11 @@ export class RecipeBuilder {
     return this
   }
 
+  withImages(images: string[]): this {
+    this.infos['images'] = images
+    return this
+  }
+
   build() {
     return this.infos
   }

@@ -55,6 +55,8 @@ export class RecipesParser {
     // Gather every raw attributes we can
     rb.withIngredients(recipe?.recipeIngredient)
       .withAuthor(recipe?.author)
+      // This attribute can either be a string or a string array, normalize it
+      .withImages([recipe?.image].flat())
       .withSteps(
         recipe?.recipeInstructions.map((ri: { '@type': string; text: string }) => ri?.text)
       )
