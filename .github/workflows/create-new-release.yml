@@ -1,4 +1,4 @@
-name: Build new image and create a new release
+name: Create a new release
 
 on:
   push:
@@ -6,7 +6,6 @@ on:
       - '*'
 jobs:
   create-release:
-    needs: image-build
     runs-on: ubuntu-latest
     steps:
       - uses: "marvinpinto/action-automatic-releases@latest"
