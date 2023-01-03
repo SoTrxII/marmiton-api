@@ -14,7 +14,7 @@
   "repository": "https://github.com/SoTrxII/marmiton-api.git",
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
@@ -87,6 +87,6 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.7",
-    "node-html-parser": "^5.3.3"
+    "node-html-parser": "^6.1.4"
   }
 }
