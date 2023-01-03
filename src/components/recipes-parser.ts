@@ -1,6 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser'
 import { RecipeBuilder } from './recipe-builder'
-import fetch from 'node-fetch'
 import { Recipe } from '../@types/recipe'
 import { RECIPE_DIFFICULTY, RECIPE_PRICE } from './recipe-enums'
 

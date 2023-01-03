@@ -1,6 +1,4 @@
 import { RecipesParser } from '../src/components/recipes-parser'
-import fetch from 'node-fetch'
-
 describe('Recipe Parser', () => {
   it('Using a sample recipe without image', async () => {
     // The sample is store in a gist, to prevent the failure due to teh recipe being pulled

@@ -3,8 +3,6 @@ import { Recipe } from './@types/recipe'
 import { MarmitonQueryBuilder } from './components/marmiton-query-builder'
 import { RECIPE_DIFFICULTY, RECIPE_PRICE, RECIPE_TYPE } from './components/recipe-enums'
 import { RecipesParser } from './components/recipes-parser'
-import fetch from 'node-fetch'
-
 export class MarmitonError extends Error {}
 
 const BASE_URL = 'https://www.marmiton.org'
