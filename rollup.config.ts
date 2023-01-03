@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import sourceMaps from 'rollup-plugin-sourcemaps'
 import json from '@rollup/plugin-json'
 import typescript from 'rollup-plugin-typescript2'
-// import visualizer from 'rollup-plugin-visualizer';
+// import { visualizer } from "rollup-plugin-visualizer";
 import terser from '@rollup/plugin-terser'
 
 const pkg = require('./package.json')
