@@ -1,6 +1,6 @@
 {
   "name": "marmiton-api",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "",
   "keywords": [],
   "main": "dist/lib/marmiton-api.js",

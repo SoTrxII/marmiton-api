@@ -6,6 +6,8 @@
 
 A web-scraper made to get recipes from marmiton.org. [Documentation](https://sotrxii.github.io/marmiton-api/)
 
+Starting with version 3.0, node >= 18.0.0 is required. If you need this project to work with any older node version, stick with marmiton-api 2.X  
+
 **NOTE : This scrapper is meant to be used on the server-side. Using the scrapper on the 
 client-side will lead to CORS issues.**
 
